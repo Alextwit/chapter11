@@ -1,24 +1,26 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class StackNumbers {
+
     public static void main(String[] args) {
 
-        Stack<Integer> stack = new Stack<>();
-        Scanner num = new Scanner(System.in);
-        int number, m, l, p;
-        number = num.nextInt();
-        while (number > 0) {
-            stack.push(number % 10);
-            number = number / 10;
-        }
-        m = 0;
-        p = 1;
-        while (!stack.empty()) {
-            l = stack.pop();
-            m = m + l * p;
-            p = p * 10;
-        }
-        System.out.println(m);
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(999);
+        numbers.add(9);
+        numbers.add(99);
+        numbers.add(9999);
+        numbers.add(99);
+        numbers.add(999);
+
+        System.out.println(numbers);
+
+        Collections.sort(numbers);
+
+        System.out.println(numbers);
+
+        Set<Integer> dig = new TreeSet<>(Comparator.reverseOrder());
+        dig.addAll(numbers);
+
+        System.out.println(dig);
     }
 }
